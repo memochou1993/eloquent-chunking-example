@@ -13,8 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('books', 'BookController@index');
+Route::get('books/issue', 'BookController@issue');
+Route::get('books/chunk', 'BookController@chunk');
+Route::get('books/chunkById', 'BookController@chunkById');
+Route::get('books/insertOrIgnore', 'BookController@insertOrIgnore');
