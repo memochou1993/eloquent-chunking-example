@@ -12,8 +12,8 @@ class BooksTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 100; $i++) {
-            $books = factory(Book::class)->times(1000)->make()->toArray();
+        for ($i = 1; $i <= 500; $i++) {
+            $books = factory(Book::class)->times(200)->make()->toArray();
 
             Book::insert($books);
         }

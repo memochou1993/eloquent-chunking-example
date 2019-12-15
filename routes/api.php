@@ -16,4 +16,5 @@ use Illuminate\Http\Request;
 Route::get('books/issue', 'BookController@issue');
 Route::get('books/chunk', 'BookController@chunk');
 Route::get('books/chunkById', 'BookController@chunkById');
+Route::get('books/cursor', 'BookController@cursor');
 Route::get('books/insertOrIgnore', 'BookController@insertOrIgnore');

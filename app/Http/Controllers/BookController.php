@@ -59,6 +59,19 @@ class BookController extends Controller
         dump($isExisting);
     }
 
+    public function cursor()
+    {
+        $max = 100000;
+
+        $existingBook = Book::find($max);
+
+        $isExisting = Book::where('id', '<=', $max)->cursor()->some(function ($book) use (&$existingBook) {
+            return $book->title === $existingBook->title;
+        });
+
+        dump($isExisting);
+    }
+
     public function insertOrIgnore()
     {
         $max = 100000;
